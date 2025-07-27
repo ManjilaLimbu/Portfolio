@@ -1,0 +1,152 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.left-section {
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+.left-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 105, 180, 0.4),
+    rgba(138, 43, 226, 0.4),
+    rgba(0, 191, 255, 0.4)
+  );
+  z-index: 1;
+}
+
+/* RIGHT SIDE */
+.right-section {
+  width: 60%;
+  background: linear-gradient(135deg, #ffe4f3, #d1faff, #fff6cd);
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  max-width: 600px;
+  z-index: 2;
+  text-align: left;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 800;
+  color: #7c3aed;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #d81b60;
+  margin: 15px 0 30px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/* SOCIAL BUTTONS */
+.social-links a {
+  display: inline-block;
+  padding: 12px 22px;
+  margin-right: 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #fff;
+  font-size: 0.95em;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #fd1d1d, #833ab4, #fcb045);
+}
+
+.tiktok {
+  background: #010101;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .right-section {
+    padding: 40px 25px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .social-links a {
+    margin-bottom: 10px;
+    display: block;
+    width: fit-content;
+  }
+}
